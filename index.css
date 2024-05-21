@@ -92,3 +92,8 @@
     margin: 10px;
     height: 10px;
 }
+
+.user-card{
+    padding: 10px;
+    border: 1px solid black;
+}
