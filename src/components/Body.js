@@ -2,6 +2,7 @@
 import ResturantCard from "./ResturantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   // Local State Variable - Super powerful variable
@@ -23,8 +24,6 @@ const Body = () => {
 
     const json = await data.json(); //now we will convert this fetched data into json
 
-    console.log(json);
-    console.log(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
 
     setListOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     setFilteredListOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
@@ -66,7 +65,7 @@ const Body = () => {
             const filteredList = listOfRestaurants.filter(
               (res) => res.info.avgRating > 4
             );
-            setListOfRestaurants(filteredList);
+            setFilteredListOfRestaurants(filteredList);
             console.log(filteredList);
           }}
         >
@@ -80,7 +79,7 @@ const Body = () => {
           //resList hi render kara rhe hai
           // whenever you are looping anything you have to loop with key and key
           //should not be generated from index value.
-          <ResturantCard key={resturant.info.id} resData={resturant} />
+          <Link key={resturant.info.id} to={"/restaurants/" + resturant.info.id} ><ResturantCard  resData={resturant} /></Link>
         ))}
       </div>
     </div>
