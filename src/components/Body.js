@@ -3,6 +3,7 @@ import ResturantCard from "./ResturantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   // Local State Variable - Super powerful variable
@@ -30,6 +31,11 @@ const Body = () => {
 
 
   };
+  const Status=useOnlineStatus();
+
+  if(Status ===false) return <h1>Hey you lost your internet connection!! Please Check</h1>;
+
+
   if (listOfRestaurants.length === 0) {
     return <Shimmer/>;
   }
