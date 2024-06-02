@@ -42,18 +42,18 @@ const Body = () => {
 
   return (
     <div className="body">
-      <div className="filter">
+      <div className="flex m-1 p-1">
         <div className="search">
           <input
             type="text"
-            className="search-box"
+            className=" border border-gray-400 rounded-md"
             value={searchText}
             onChange={(e) => {
               setSearcText(e.target.value);
             }}
           ></input>
           <button
-          className="search-button"
+          className="m-4 px-4 border border-gray-400 shadow-md rounded-xl font-bold"
           on
           onClick={() => {
             const filteredList=listOfRestaurants.filter((res)=>res.info.name.toLowerCase().includes(searchText.toLowerCase()));
@@ -63,10 +63,8 @@ const Body = () => {
         >
           Search
         </button>
-        </div>
-        
         <button
-          className="filter-btn"
+          className="m-4 px-4 border border-gray-400 shadow-md rounded-xl font-bold"
           onClick={() => {
             const filteredList = listOfRestaurants.filter(
               (res) => res.info.avgRating > 4
@@ -77,8 +75,11 @@ const Body = () => {
         >
           Top Rated Restaurants
         </button>
+        </div>
+        
+
       </div>
-      <div className="res-container">
+      <div className="res-container flex  flex-wrap ">
         {filteredListOfRestaurants.map((resturant) => (
           // yaha pr mistake ki updated filtered list listofRestaurants me hai to yhan hum agar resList pass karenge to
           // hamara filtered function work nhi karega  because state variable pass karne se kya fayda jab yhan pr hum
