@@ -1,4 +1,5 @@
 import React from "react";
+import UserContext from "./UserContext";
 
 class UserClass extends React.Component {
   constructor(props) {
@@ -11,26 +12,24 @@ class UserClass extends React.Component {
     this.state = {
       count: 0,
       count2: 2,
-      userInfo:{
+      userInfo: {
         name: "dummy",
-        location:"dummy", 
-        
-      }
+        location: "dummy",
+      },
     };
   }
 
-  async componentDidMount(){
+  async componentDidMount() {
     const data = await fetch("https://api.github.com/users/Khemchand7");
     const json = await data.json();
     console.log(json);
-    this.setState({userInfo:json});
+    this.setState({ userInfo: json });
   }
 
   render() {
-
     const { count, count2 } = this.state;
-    const {name , location, avatar_url}=this.state.userInfo;
-    
+    const { name, location, avatar_url } = this.state.userInfo;
+
     return (
       <div className="user-card">
         {/* <h1>Count: {this.state.count}</h1> */}
@@ -49,6 +48,12 @@ class UserClass extends React.Component {
         </button>
 
         <h1>Count2: {count2}</h1>
+        <div>
+          Logged In User:
+          <UserContext.Consumer>
+            {(data) => <h2>{data.loggedInUser}</h2>}
+          </UserContext.Consumer>
+        </div>
         <img src="https://avatars.githubusercontent.com/u/124715350?v=4"></img>
         <h2>Name:{name}</h2>
         <h3>location: {location}</h3>

@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { CDN_LOGO } from "../utils/constants";
 import { CDN_LOGO } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "./UserContext";
 
 const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState("Login");
   const onlineStatus = useOnlineStatus();
+
+  const {loggedInUser} = useContext(UserContext);
 
   return (
     <div className="flex space justify-between shadow-md">
@@ -29,6 +32,7 @@ const Header = () => {
           <li className="m-4 px-4">
             <Link to={"/grocery"}>Grocery</Link>
           </li>
+          <li>{loggedInUser}</li>
           <li className="m-4 px-4">Cart</li>
           <button
             className="m-4 px-4 bg-blue-300 rounded-md font-bold"
