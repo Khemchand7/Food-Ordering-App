@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import ItemList from "./ItemList";
+import { IoIosArrowDown,IoIosArrowUp } from "react-icons/io";
 
 const RestaurantCategory=({data,showList,settingShowIndex})=>{
     const headerRef=useRef(null);
@@ -13,11 +14,11 @@ const RestaurantCategory=({data,showList,settingShowIndex})=>{
 
     
     return(
-        <div className="w-6/12 mx-auto my-4 bg-gray-50 shadow-lg p-4" >
+        <div className="w-6/12 mx-auto my-4 bg-gray-50 shadow-lg md:p-4" >
         <div className="flex justify-between cursor-pointer " onClick={(hideShowList)}  ref={headerRef}
         tabIndex={0} >
         <span className="mx-2 font-bold" >{data?.title} ({data.itemCards.length})</span>
-            <span>{showList?"▲":"▼"}</span>
+            <span>{showList?<IoIosArrowDown className="font-bold text-black"/>:<IoIosArrowUp className="font-bold text-black" />}</span>
         </div>
             {showList && <ItemList  items={data.itemCards}/>}
         </div>

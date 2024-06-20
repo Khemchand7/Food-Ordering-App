@@ -15,9 +15,6 @@ const RestaurantMenu = () => {
     setShowIndex(showIndex===index?null:index);
   };
   
-
-  
-
   if (resInfo === null) return <Shimmer></Shimmer>;
 
   const { name, cuisines, costForTwoMessage } =
@@ -46,7 +43,7 @@ const RestaurantMenu = () => {
   var key = 0;
 
   return (
-    <div className="mx-2 p-4 text-center">
+    <div className="md:mx-2 md:p-4 text-center">
       <h1 className="m-2  text-2xl font-bold">{name}</h1>
       <h2 className="mx-2 p-2 font-bold text-lg">
         {cuisines.join(", ")} - {costForTwoMessage}

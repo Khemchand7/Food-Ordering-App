@@ -5,6 +5,7 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 
+
 const Body = () => {
   // Local State Variable - Super powerful variable
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -43,12 +44,12 @@ const Body = () => {
   if (Status === false)
     return <h1>Hey you lost your internet connection!! Please Check</h1>;
 
-  if (listOfRestaurants.length === 0) {
+  if (listOfRestaurants.length===0) {
     return <Shimmer />;
   }
 
   return (
-    <div className="body">
+    <div className="body max-w-[1200px] mx-auto">
       <div className="flex m-1 p-1">
         <div className="search">
           <input
@@ -82,11 +83,11 @@ const Body = () => {
               console.log(filteredList);
             }}
           >
-            Top Rated Restaurants
+            Ratings 4.0+
           </button>
         </div>
       </div>
-      <div className="res-container flex  flex-wrap ">
+      <div className="grid  grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 ">
         {filteredListOfRestaurants.map((resturant) => (
           // yaha pr mistake ki updated filtered list listofRestaurants me hai to yhan hum agar resList pass karenge to
           // hamara filtered function work nhi karega  because state variable pass karne se kya fayda jab yhan pr hum
@@ -97,9 +98,11 @@ const Body = () => {
             key={resturant.info.id}
             to={"/restaurants/" + resturant.info.id}
           >
-            {
-              resturant.info.isOpen?<RestaurantCardVeg resData={resturant} />: <ResturantCard resData={resturant} />
-            }
+            {resturant.info.isOpen ? (
+              <RestaurantCardVeg resData={resturant} />
+            ) : (
+              <ResturantCard resData={resturant} />
+            )}
             {/* <ResturantCard resData={resturant} /> */}
           </Link>
         ))}

@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "./UserContext";
 import { useSelector } from "react-redux";
+import { BiSolidOffer, } from "react-icons/bi";
+import { LuShoppingCart } from "react-icons/lu";
 
 const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState("Login");
@@ -29,7 +31,7 @@ const Header = () => {
           </li>
 
           <li className="m-4 px-4">
-            <Link to={"/about"}>About</Link>
+            <Link to={"/about"}><BiSolidOffer/> Offers</Link>
           </li>
           <li className="m-4 px-4">
             <Link to={"/contact"}>Contact Us</Link>
@@ -38,8 +40,8 @@ const Header = () => {
             <Link to={"/grocery"}>Grocery</Link>
           </li>
           <li>{loggedInUser}</li>
-          <li className="m-4 px-4">
-            <Link to={"/cart"}>Cart-({cartItems.length} items)</Link>
+          <li className="m-4 px-4 ">
+            <Link to={"/cart"}><LuShoppingCart/>Cart-({cartItems.length} items)</Link>
           </li>
           <button
             className="m-4 px-4 bg-blue-300 rounded-md font-bold"
