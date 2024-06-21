@@ -37,6 +37,6 @@
   },
   "browserlist": [
     "last 2 versions"
-  ],
-  "main": "App.js"
+  ]
+
 }

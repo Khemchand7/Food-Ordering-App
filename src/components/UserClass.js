@@ -54,7 +54,7 @@ class UserClass extends React.Component {
             {(data) => <h2>{data.loggedInUser}</h2>}
           </UserContext.Consumer>
         </div>
-        <img src="https://avatars.githubusercontent.com/u/124715350?v=4"></img>
+        {/* <img src="https://avatars.githubusercontent.com/u/124715350?v=4"></img> */}
         <h2>Name:{name}</h2>
         <h3>location: {location}</h3>
         <h4>Contact: khemchandk360@gmail.com</h4>
