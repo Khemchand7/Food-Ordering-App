@@ -3,6 +3,7 @@ import React from "react";
 import ResturantCard from "./ResturantCard";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Shimmer from "./Shimmer";
 
 export const TopRestaurnat = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -36,42 +37,42 @@ export const TopRestaurnat = () => {
   };
 
   return (
-    <div className="max-w-[1200px] mx-auto ">
-      <div className=" flex flex-wrap items-center py-4 justify-between align-middle">
-        <div className="font-bold text-sm md:text-xl">
-          Top restaurant chains in Delhi
+    listOfRestaurants.length===0?<Shimmer/>:<div className="max-w-[1200px] mx-auto ">
+    <div className=" flex flex-wrap items-center py-4 justify-between align-middle">
+      <div className="font-bold text-sm md:text-xl">
+        Top restaurant chains in Delhi
+      </div>
+      <div className="flex">
+        <div
+          onClick={prevSlide}
+          className="cursor-pointer flex flex-wrap justify-center items-center h-[34px] w-[34px] bg-[#e2dee7] rounded-full mx-1 "
+        >
+          <FaArrowLeft />
         </div>
-        <div className="flex">
-          <div
-            onClick={prevSlide}
-            className="cursor-pointer flex flex-wrap justify-center items-center h-[34px] w-[34px] bg-[#e2dee7] rounded-full mx-1 "
-          >
-            <FaArrowLeft />
-          </div>
-          <div
-            onClick={nextSlide}
-            className="cursor-pointer flex flex-wrap justify-center items-center h-[34px] w-[34px] bg-[#e2dee7] rounded-full mx-1"
-          >
-            <FaArrowRight />
-          </div>
+        <div
+          onClick={nextSlide}
+          className="cursor-pointer flex flex-wrap justify-center items-center h-[34px] w-[34px] bg-[#e2dee7] rounded-full mx-1"
+        >
+          <FaArrowRight />
         </div>
       </div>
-      <div className="flex gap-3 md:gap-5 overflow-hidden"> 
-  {listOfRestaurants.map((restaurant) => (
-    <div
-      key={restaurant.info.id}  
-      style={{ transform: `translateX(-${slide * 100}%)` }} 
-      className="shrink-0 duration-500"
-    >
-      <Link to={"/restaurants/" + restaurant.info.id}>
-        <ResturantCard resData={restaurant} />
-      </Link>
     </div>
-  ))}
+    <div className="flex gap-3 md:gap-5 overflow-hidden"> 
+{listOfRestaurants.map((restaurant) => (
+  <div
+    key={restaurant.info.id}  
+    style={{ transform: `translateX(-${slide * 100}%)` }} 
+    className="shrink-0 duration-500"
+  >
+    <Link to={"/restaurants/" + restaurant.info.id}>
+      <ResturantCard resData={restaurant} />
+    </Link>
+  </div>
+))}
 </div>
 
 <hr className="my-6 border"></hr>
-    </div>
+  </div>
   );
 };
 export default TopRestaurnat;

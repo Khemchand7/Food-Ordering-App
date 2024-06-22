@@ -13,6 +13,7 @@ import appStore from "./utils/appStore";
 import Cart from "./components/Cart";
 import { WhatsOnYourMind } from "./components/WhatsOnYourMind";
 import TopRestaurnat from "./components/TopRestaurnat";
+import Footer from "./components/Footer";
 //import Grocery from "./components/Grocery";
 
 const Grocery = lazy(() => import("./components/Grocery"));
@@ -43,6 +44,7 @@ const HomePage = () => (
     <WhatsOnYourMind />
     <TopRestaurnat />
     <Body />
+    <Footer/>
   </>
 );
 const appRouter = createBrowserRouter([
