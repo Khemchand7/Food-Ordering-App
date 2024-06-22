@@ -11,8 +11,7 @@ export const useResData = () => {
     
       const fetchData = async () => {
         const data = await fetch(
-          "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6655181&lng=77.258312&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-        );
+          "https://cors-handlers.vercel.app/api/?url=https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D28.6655181%26lng%3D77.258312%26is-seo-homepage-enabled%3Dtrue%26page_type%3DDESKTOP_WEB_LISTING");
         // above statement will return a promise , so we need to resolve the promise
     
         const json = await data.json(); //now we will convert this fetched data into json
