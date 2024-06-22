@@ -1,6 +1,5 @@
 import { useContext, useState } from "react";
-import { CDN_LOGO } from "../utils/constants";
-import { CDN_LOGO } from "../utils/constants";
+import Logo from "../images/logo.png";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "./UserContext";
@@ -19,9 +18,9 @@ const Header = () => {
    console.log(cartItems);
 
   return (
-    <div className="flex  flex-wrap space justify-between shadow-md">
+    <div className="h-full flex  space justify-between shadow-md">
       <div className="w-[112px] ">
-        <img className="logo" src={CDN_LOGO}></img>
+        <img className="md:w-[50px] w-[30px] mx-8 p-2" src={Logo}></img>
       </div>
       <div className="flex items flex-wrap font-bold ">
         <ul className="flex flex-wrap items-center ">

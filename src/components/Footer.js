@@ -13,7 +13,7 @@ const Footer = () => {
               <Link to="/">
                 <img src={Logo} alt="logo" className="w-6 inline mr-3" />
               </Link>
-              <span className="font-semibold text-2xl">Swiggato</span>
+              <span className="font-semibold text-2xl">FOOD APP</span>
             </li>
             <li className="text-gray-400 my-2">
               &copy; 2024 PS Technologies <br /> Pvt. Ltd
