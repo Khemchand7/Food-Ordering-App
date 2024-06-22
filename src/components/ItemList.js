@@ -30,10 +30,13 @@ const ItemList = ({ items }) => {
           </div>
 
           <div className="w-3/12 p-4 m-2 flex  justify-center">
-            <img
+          <div className="w-full h-full">
+          <img
               src={CDN_URL + item?.card?.info?.imageId}
-              className="w-full h-24 rounded-xl"
+              className="w-full h-12 md:h-24 rounded-xl"
             ></img>
+          </div>
+
             <button
               className="-mt-[14] absolute bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline scale-75"
               onClick={()=>handleCartItems(item)}
