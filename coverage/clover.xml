@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1724760036809" clover="3.2.0">
-  <project timestamp="1724760036809" name="All files">
-    <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1" elements="3" coveredelements="3" complexity="0" loc="2" ncloc="2" packages="1" files="1" classes="1"/>
+<coverage generated="1724769202493" clover="3.2.0">
+  <project timestamp="1724769202493" name="All files">
+    <metrics statements="11" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2" elements="15" coveredelements="9" complexity="0" loc="11" ncloc="11" packages="1" files="2" classes="2"/>
+    <file name="Contact.js" path="C:\Users\NEERAJ KUMAR\OneDrive\Desktop\React\src\components\Contact.js">
+      <metrics statements="9" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="4" type="stmt"/>
+      <line num="9" count="4" type="stmt"/>
+      <line num="10" count="0" type="stmt"/>
+      <line num="11" count="0" type="stmt"/>
+      <line num="17" count="4" type="stmt"/>
+      <line num="18" count="0" type="stmt"/>
+      <line num="19" count="0" type="stmt"/>
+      <line num="22" count="4" type="stmt"/>
+    </file>
     <file name="sum.js" path="C:\Users\NEERAJ KUMAR\OneDrive\Desktop\React\src\components\sum.js">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="1" count="1" type="stmt"/>

@@ -32,9 +32,9 @@ const Header = () => {
           <li className="m-4 px-4  hover:text-orange-400">
             <Link to={"/about"}><BiSolidOffer className="inline"/> Offers</Link>
           </li>
-          {/* <li className="m-4 px-4">
+          <li className="m-4 px-4">
             <Link to={"/contact"}>Contact Us</Link>
-          </li> */}
+          </li>
           <li className="m-4 px-4  hover:text-orange-400">
             <Link to={"/grocery"}>Grocery</Link>
           </li>
