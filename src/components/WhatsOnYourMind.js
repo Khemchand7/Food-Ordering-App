@@ -24,7 +24,7 @@ export const WhatsOnYourMind = () => {
   // }
 
   return (
-    resData.lenth===0?<Shimmer/> :  <div className="max-w-[1200px] mx-auto">
+    resData.length===0?<Shimmer/> :  <div className="max-w-[1200px] mx-auto">
     <div className=" flex items-center py-4 justify-between align-middle">
       <div className="font-bold text-sm md:text-xl">
         What's on your mind?

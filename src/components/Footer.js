@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Logo from "../images/logo.png";
-import { aboutCompany, contact, locationObject } from "../utils/constants";
+import { aboutCompany, CDN_LOGO, contact, locationObject } from "../utils/constants";
 
 const Footer = () => {
   return (
@@ -11,7 +10,7 @@ const Footer = () => {
           <ul className="flex flex-col ">
             <li className="flex items-center">
               <Link to="/">
-                <img src={Logo} alt="logo" className="w-6 inline mr-3" />
+                <img src={CDN_LOGO} alt="logo" className="w-14 inline mr-3" />
               </Link>
               <span className="font-semibold text-2xl">FOOD APP</span>
             </li>
