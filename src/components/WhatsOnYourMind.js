@@ -7,6 +7,7 @@ import Shimmer from "./Shimmer";
 
 export const WhatsOnYourMind = () => {
   const resData = useResData();
+  //console.log(resData);
   const [slide, setSlide] = useState(3);
 
 
@@ -45,13 +46,13 @@ export const WhatsOnYourMind = () => {
       </div>
     </div>
     <div className="flex  overflow-hidden">
-      {resData.map((d, i) => (
+      {resData.map((d) => (
         //as we have done mapping so translate ek ko dene se baki sabko bhi same translat mil rha hai
-        <div
+        <div key={d.id}
           style={{ transform: `translateX(-${slide * 100}%)` }}
           className=" w-[150px]  shrink-0 duration-500"
         >
-          <img key={i} src={CDN_URL + d.imageId}></img>
+          <img  src={CDN_URL + d.imageId}></img>
         </div>
       ))}
     </div>

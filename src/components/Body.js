@@ -38,6 +38,7 @@ const Body = () => {
     setFilteredListOfRestaurants(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
+    //console.log(listOfRestaurants);
   };
   const Status = useOnlineStatus();
 
@@ -54,6 +55,7 @@ const Body = () => {
         <div className="search">
           <input
             type="text"
+            data-testid="searchInput"
             className=" border border-gray-400 rounded-md"
             value={searchText}
             onChange={(e) => {
@@ -61,8 +63,8 @@ const Body = () => {
             }}
           ></input>
           <button
+          data-testid="searchButton"
             className="m-4 px-4 border border-gray-400 shadow-md rounded-xl font-bold"
-            on
             onClick={() => {
               const filteredList = listOfRestaurants.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -80,7 +82,7 @@ const Body = () => {
                 (res) => res.info.avgRating > 4
               );
               setFilteredListOfRestaurants(filteredList);
-              console.log(filteredList);
+              //console.log(filteredList);
             }}
           >
             Ratings 4.0+
@@ -95,13 +97,13 @@ const Body = () => {
           // whenever you are looping anything you have to loop with key and key
           //should not be generated from index value.
           <Link
-            key={resturant.info.id}
+            key={resturant?.info?.id}
             to={"/restaurants/" + resturant.info.id}
           >
             {resturant.info.isOpen ? (
-              <RestaurantCardVeg resData={resturant} />
+              <RestaurantCardVeg resData={resturant?.info} />
             ) : (
-              <ResturantCard resData={resturant} />
+              <ResturantCard resData={resturant?.info} />
             )}
             {/* <ResturantCard resData={resturant} /> */}
           </Link>

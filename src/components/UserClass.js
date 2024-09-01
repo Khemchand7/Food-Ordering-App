@@ -4,7 +4,7 @@ import UserContext from "./UserContext";
 class UserClass extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
+    //console.log(props);
 
     // inside constructor is the best place to create state variable in class based component
     // this.state is a big object which stores all the state variables so no need to create this. state again like

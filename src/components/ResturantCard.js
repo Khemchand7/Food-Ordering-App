@@ -7,7 +7,7 @@ import { LuDot } from "react-icons/lu";
 const ResturantCard = (props) => {
   // const {resName,cuisines,rating,delievryTime}=props;
   const { resData } = props;
-  console.log(resData);
+  //console.log(resData);
   const {
     cloudinaryImageId,
     aggregatedDiscountInfoV3,
@@ -15,13 +15,16 @@ const ResturantCard = (props) => {
     cuisines,
     avgRating,
     sla,
-    areaName
-  } = resData?.info;
+    areaName,
+  } = resData;
 
   const { loggedInUser } = useContext(UserContext);
 
   return (
-    <div className="w-[150] md:w-[273px] hover:scale-90 cursor-pointer hover:border-t-4">
+    <div
+      data-testid="resCard"
+      className="w-[150] md:w-[273px] hover:scale-90 cursor-pointer hover:border-t-4"
+    >
       <div className="h-[100px] md:h-[182px] rounded-[15px] overflow-hidden relative ">
         <img
           className="object-cover w-full h-full rounded-lg "
@@ -36,15 +39,17 @@ const ResturantCard = (props) => {
         </div>
       </div>
       <div className="m-2 p-2">
-      <div className="handletext mt-1 font-bold text-xl ">{name}</div>
-      <div className="flex items-center mt-1 font-bold text-sm md:text-lg">
-        <StarSymbol className="mr-1" />
-        {avgRating}
-        <LuDot />
-        {sla.slaString}
-      </div>
-      <div className="handletext overflow-hidden text-slate-700">{cuisines.join(", ")}</div>
-      <div className="text-slate-700">{areaName}</div>
+        <div className="handletext mt-1 font-bold text-xl ">{name}</div>
+        <div className="flex items-center mt-1 font-bold text-sm md:text-lg">
+          <StarSymbol className="mr-1" />
+          {avgRating}
+          <LuDot />
+          {sla?.slaString}
+        </div>
+        <div className="handletext overflow-hidden text-slate-700">
+          {cuisines?.join(", ")}
+        </div>
+        <div className="text-slate-700">{areaName}</div>
       </div>
     </div>
   );

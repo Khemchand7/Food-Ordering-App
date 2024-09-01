@@ -39,7 +39,7 @@ const RestaurantMenu = () => {
     );
  
 
-  console.log(categories);
+  //console.log(categories);
   var key = 0;
 
   return (

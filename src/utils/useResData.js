@@ -16,6 +16,7 @@ export const useResData = () => {
     
         const json = await data.json(); //now we will convert this fetched data into json
         setDataOfRestaurants(json?.data?.cards[0]?.card?.card?.imageGridCards?.info);
+        //console.log(dataOfRestaurants);
 };
 return dataOfRestaurants;
 }

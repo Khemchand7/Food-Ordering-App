@@ -65,7 +65,7 @@ export const TopRestaurnat = () => {
     className="shrink-0 duration-500"
   >
     <Link to={"/restaurants/" + restaurant.info.id}>
-      <ResturantCard resData={restaurant} />
+      <ResturantCard resData={restaurant?.info} />
     </Link>
   </div>
 ))}
